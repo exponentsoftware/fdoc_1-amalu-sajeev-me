@@ -87,3 +87,16 @@ function varietyOfWords(sentence) {
 
     for (let i = 1; i <= 7; i++) console.log("#".repeat(i));
 
+/**
+ * 2.b. Write a function which returns array of seven random numbers in a range of 0-9. 
+ * All the numbers must be unique
+ */
+
+console.log(sevenRandomNumbers());
+
+function sevenRandomNumbers() {
+    let rand = () => ~~(Math.random() * 10);
+    let numbers = new Set();
+    while (numbers.size < 7) numbers.add(rand());
+    return Array.from(numbers);
+}
