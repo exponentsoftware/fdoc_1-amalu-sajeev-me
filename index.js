@@ -85,14 +85,14 @@ function varietyOfWords(sentence) {
     #######
  */
 
-    for (let i = 1; i <= 7; i++) console.log("#".repeat(i));
+    // for (let i = 1; i <= 7; i++) console.log("#".repeat(i));
 
 /**
  * 2.b. Write a function which returns array of seven random numbers in a range of 0-9. 
  * All the numbers must be unique
  */
 
-console.log(sevenRandomNumbers());
+// console.log(sevenRandomNumbers());
 
 function sevenRandomNumbers() {
     let rand = () => ~~(Math.random() * 10);
@@ -100,3 +100,24 @@ function sevenRandomNumbers() {
     while (numbers.size < 7) numbers.add(rand());
     return Array.from(numbers);
 }
+
+// ####################################################################################
+
+/**
+ * 2c. Reversing an array: 
+ * Arrays have a reverse method which changes the array by inverting 
+ * the order in which its elements appear. For this exercise, 
+ * write a function, reverseArray. 
+ * The reverseArray, takes an array as argument and produces 
+ * a new array that has the same elements in the inverse order. 
+ * Without reverse method
+ */
+
+ console.log(reverseArray(["A", "B", "C"]));
+//  ["C", "B", "A"]
+
+function reverseArray(arr) {
+    return arr.map((elem, index, arr) => arr[arr.length - index - 1]);
+}
+
+// ##################################################################
