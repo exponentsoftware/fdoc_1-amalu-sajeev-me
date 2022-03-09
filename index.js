@@ -37,7 +37,7 @@ let sentence = `%I $am@% a %tea@cher%, &and& I lo%#ve %tea@ching%;.
 // console.log(cleanText(sentence));
 
 function cleanText(sentence) {
-  return sentence.replace(/[|&;$%@"<>()+,]/g, "");
+  return sentence.replace(/[|&;$%@"<>()+,\n]/g, "");
 }
 
 //  ########################################################################
@@ -49,7 +49,7 @@ function cleanText(sentence) {
  */
 
 sentence = cleanText(sentence);
-console.log(countWords(sentence));
+// console.log(countWords(sentence));
 
 function countWords(sentence) {
   const totalWords = sentence.split(" ").filter((v) => v.length > 1).length;
@@ -57,4 +57,18 @@ function countWords(sentence) {
 }
 
 // ################################################################################
+
+/**
+ * 1.d. How many words were used to construct this sentence.
+ * Now, don't exclude one letter words.
+ */
+
+// console.log(varietyOfWords(sentence));
+
+function varietyOfWords(sentence) {
+  sentence = sentence.toLowerCase();
+  const words = sentence.split(" ");
+  const uniqueWords = new Set(words);
+  return uniqueWords.size;
+}
 
